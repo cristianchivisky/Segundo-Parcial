@@ -235,6 +235,21 @@ def postorden(arbol):
         print(arbol['info'])
         postorden(arbol['izq'])
 
+def postorden_grogu(arbol, alt):
+    if(arbol is not None):
+        if arbol['info']=='Grogu':
+            #print(arbol['info'])
+            print(f'altura: ', arbol['altura'])
+            #print(arbol['der'], arbol['izq'])
+            if arbol['altura']==0:
+                print('es hoja')
+            elif arbol['altura']== alt:
+                print('es raiz')
+            else:
+                print('esta en el medio')
+        postorden_grogu(arbol['der'], alt)
+        postorden_grogu(arbol['izq'], alt)
+
 
 def postorden_heroes(arbol):
     if(arbol is not None):
